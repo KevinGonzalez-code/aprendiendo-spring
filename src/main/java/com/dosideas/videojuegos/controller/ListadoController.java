@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ListadoController {
@@ -26,9 +27,11 @@ public class ListadoController {
         return "listado";
     }
 
-    @RequestMapping("/hello")
-    public String hello(){
-        return "test";
+    @RequestMapping("/buscar")
+    public String buscar(@RequestParam("q") String consulta, Model model){
+        List<Videojuego> juegos = videojuegoService.buscar(consulta);
+        model.addAttribute("videojuegos",juegos);
+        return "listado";
     }
 
     @RequestMapping("/videojuegosPorDistribuidor")

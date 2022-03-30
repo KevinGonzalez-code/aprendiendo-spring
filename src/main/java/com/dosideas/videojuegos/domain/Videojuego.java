@@ -1,12 +1,33 @@
 package com.dosideas.videojuegos.domain;
 
-public class Videojuego {
+import javax.persistence.*;
 
+@Entity
+public class Videojuego {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String nombre;
     private String descripcion;
     private String imagenUrl;
+    @ManyToOne
+    private Distribuidor distribuidor;
 
+    public Distribuidor getDistribuidor() {
+        return distribuidor;
+    }
 
+    public void setDistribuidor(Distribuidor distribuidor) {
+        this.distribuidor = distribuidor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

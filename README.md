@@ -1,2 +1,1 @@
-Es una AppVideojuegos tipo CRUD.
-Applicacion creada en Srping con JPA Data, thymeleaf, MySQL, Boostrap.
+Es una AppVideojuegos tipo CRUD, creada en Srping con Spring Data JPA, Thymeleaf, MySQL, Boostrap.

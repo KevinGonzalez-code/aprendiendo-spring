@@ -13,6 +13,8 @@ public class Distribuidor {
     private String nombre;
     private String sitioWeb;
 
+
+
     public int getId() {
         return id;
     }

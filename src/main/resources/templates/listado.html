@@ -24,7 +24,15 @@
 </nav>
 
 <div class="container vj-destacados">
+
+    <div class="row">
+        <div class="col col-md-12 text-right  mt-3">
+            <a th:href="@{/videojuegos/crear}" class="btn btn-outline-success">Crear Videojuego</a>
+        </div>
+    </div>
+
     <div class="row mt-5" >
+
         <div class="col-md-3 mb-3" th:each="juego : ${videojuegos}" >
             <div class="card">
                 <img th:src="${juego.imagenUrl}" class="card-img-top" alt="...">

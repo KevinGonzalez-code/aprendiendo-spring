@@ -5,13 +5,24 @@ import javax.persistence.*;
 @Entity
 public class Videojuego {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
     private String descripcion;
     private String imagenUrl;
     @ManyToOne
     private Distribuidor distribuidor;
+
+    @Override
+    public String toString() {
+        return "Videojuego{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", imagenUrl='" + imagenUrl + '\'' +
+                ", distribuidor=" + distribuidor.getId() +
+                '}';
+    }
 
     public Distribuidor getDistribuidor() {
         return distribuidor;
